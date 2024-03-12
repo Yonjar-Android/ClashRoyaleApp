@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_map"
+    app:startDestination="@id/mainInfoFragment2">
+
+    <fragment
+        android:id="@+id/mainInfoFragment2"
+        android:name="com.yonjar.clashroyalestats.ui.mainInfoFragment.MainInfoFragment"
+        android:label="fragment_main_info"
+        tools:layout="@layout/fragment_main_info" >
+        <action
+            android:id="@+id/action_mainInfoFragment2_to_cardsFragment2"
+            app:destination="@id/cardsFragment2" />
+        <action
+            android:id="@+id/action_mainInfoFragment2_to_chestFragment2"
+            app:destination="@id/chestFragment2" />
+        <action
+            android:id="@+id/action_mainInfoFragment2_to_badgesFragment2"
+            app:destination="@id/badgesFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardsFragment2"
+        android:name="com.yonjar.clashroyalestats.ui.cardsFragment.CardsFragment"
+        android:label="fragment_cards"
+        tools:layout="@layout/fragment_cards" >
+        <action
+            android:id="@+id/action_cardsFragment2_to_mainInfoFragment2"
+            app:destination="@id/mainInfoFragment2" />
+        <action
+            android:id="@+id/action_cardsFragment2_to_chestFragment2"
+            app:destination="@id/chestFragment2" />
+        <action
+            android:id="@+id/action_cardsFragment2_to_badgesFragment2"
+            app:destination="@id/badgesFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/badgesFragment2"
+        android:name="com.yonjar.clashroyalestats.ui.badgesFragment.BadgesFragment"
+        android:label="fragment_badges"
+        tools:layout="@layout/fragment_badges" >
+        <action
+            android:id="@+id/action_badgesFragment2_to_chestFragment2"
+            app:destination="@id/chestFragment2" />
+        <action
+            android:id="@+id/action_badgesFragment2_to_mainInfoFragment2"
+            app:destination="@id/mainInfoFragment2" />
+        <action
+            android:id="@+id/action_badgesFragment2_to_cardsFragment2"
+            app:destination="@id/cardsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/chestFragment2"
+        android:name="com.yonjar.clashroyalestats.ui.chestFragment.ChestFragment"
+        android:label="fragment_chest"
+        tools:layout="@layout/fragment_chest" >
+        <action
+            android:id="@+id/action_chestFragment2_to_cardsFragment2"
+            app:destination="@id/cardsFragment2" />
+        <action
+            android:id="@+id/action_chestFragment2_to_mainInfoFragment2"
+            app:destination="@id/mainInfoFragment2" />
+        <action
+            android:id="@+id/action_chestFragment2_to_badgesFragment2"
+            app:destination="@id/badgesFragment2" />
+    </fragment>
+</navigation>

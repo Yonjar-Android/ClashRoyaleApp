@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mainStatsMenu"
+        android:title="User"
+        />
+
+    <item
+        android:id="@+id/cardsMenu"
+        android:title="Cards"
+        />
+
+    <item
+        android:id="@+id/badgesMenu"
+        android:title="Badges"
+        />
+
+    <item
+        android:id="@+id/chestMenu"
+        android:title="Chest Cycle"
+        />
+
+
+</menu>
