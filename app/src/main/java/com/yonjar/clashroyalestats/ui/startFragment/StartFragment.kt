@@ -32,11 +32,21 @@ class StartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         binding.btnEnter.setOnClickListener {
-            findNavController().navigate(R.id.action_startFragment2_to_mainInfoFragment22)
-        }
 
+            if(binding.edTag.text.isBlank()){
+                binding.edTag.error = "This camp cannot be empty"
+                return@setOnClickListener
+            }
+
+            val tagPlayer: String = binding.edTag.text.trim().toString().uppercase()
+
+            findNavController().navigate(
+                StartFragmentDirections.actionStartFragment2ToMainInfoFragment22(
+                    tagPlayer
+                )
+            )
+        }
     }
 
 }

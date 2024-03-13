@@ -66,6 +66,11 @@ dependencies {
     implementation ("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation ("com.squareup.retrofit2:converter-gson:$retrofitVersion")
 
+    // Interceptor
+
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
+
     // Corrutinas
     val activityVersion = "1.8.2"
     val lifecycleVersion = "2.7.0"

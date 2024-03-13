@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_mainInfoFragment2_to_badgesFragment2"
             app:destination="@id/badgesFragment2" />
+        <argument
+            android:name="tagPlayer"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/cardsFragment2"
