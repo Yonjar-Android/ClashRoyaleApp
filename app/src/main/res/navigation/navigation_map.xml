@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_map"
-    app:startDestination="@id/mainInfoFragment2">
+    app:startDestination="@id/startFragment2">
 
     <fragment
         android:id="@+id/mainInfoFragment2"
@@ -64,5 +64,14 @@
         <action
             android:id="@+id/action_chestFragment2_to_badgesFragment2"
             app:destination="@id/badgesFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/startFragment2"
+        android:name="com.yonjar.clashroyalestats.ui.startFragment.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment2_to_mainInfoFragment22"
+            app:destination="@id/mainInfoFragment2" />
     </fragment>
 </navigation>

@@ -6,60 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".ui.mainActivity.MainActivity">
 
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="130dp"
-        android:layout_margin="10dp"
-        android:src="@drawable/clash_royale_logo"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragContainer"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/navMenu"
         app:layout_constraintTop_toTopOf="parent"
-
-
+        app:navGraph="@navigation/navigation_map"
         />
 
 
-    <TextView
-        android:id="@+id/textViewTag"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enter a player tag"
-        android:textSize="45sp"
-        android:textStyle="bold"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintBottom_toTopOf="@+id/edTag"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4"
-        />
-
-    <EditText
-        android:id="@+id/edTag"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:maxLines="1"
-        android:textSize="30sp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTag" />
-
-    <Button
-        android:id="@+id/btnEnter"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navMenu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="Enter"
-        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-         />
+        app:layout_constraintTop_toBottomOf="@+id/fragContainer"
+        app:menu="@menu/menu_layout" />
 
 
 
