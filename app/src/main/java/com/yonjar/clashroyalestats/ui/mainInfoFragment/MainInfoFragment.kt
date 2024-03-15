@@ -6,10 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -31,6 +33,8 @@ class MainInfoFragment : Fragment() {
 
     private val viewModel:MainInfoViewModel by viewModels()
 
+    private lateinit var onBackPressedCallback: OnBackPressedCallback
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -51,6 +55,8 @@ class MainInfoFragment : Fragment() {
         if (args.tagPlayer.isNotBlank()){ viewModel.chargePlayerInfo(args.tagPlayer)} else Toast.makeText(requireContext(),"An error has ocurred",Toast.LENGTH_SHORT).show()
 
         initUI()
+
+        setupOnBackPressed()
 
     }
 
@@ -86,6 +92,21 @@ class MainInfoFragment : Fragment() {
         Toast.makeText(requireContext(), state.error, Toast.LENGTH_SHORT).show()
 
         binding.progressBar.visibility = View.GONE
+    }
+
+    private fun setupOnBackPressed() {
+        onBackPressedCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                findNavController().navigate(MainInfoFragmentDirections.actionMainInfoFragment2ToStartFragment2())
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, onBackPressedCallback)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+        onBackPressedCallback.remove()
     }
 
 }

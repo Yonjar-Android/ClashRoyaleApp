@@ -22,6 +22,9 @@
         <argument
             android:name="tagPlayer"
             app:argType="string" />
+        <action
+            android:id="@+id/action_mainInfoFragment2_to_startFragment2"
+            app:destination="@id/startFragment2" />
     </fragment>
     <fragment
         android:id="@+id/cardsFragment2"

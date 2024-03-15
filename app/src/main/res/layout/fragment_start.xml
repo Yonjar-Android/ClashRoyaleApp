@@ -15,6 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/logoDesc"
         />
 
 
@@ -22,7 +23,7 @@
         android:id="@+id/textViewTag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter a player tag"
+        android:text="@string/strEnterTag"
         android:textSize="45sp"
         android:textStyle="bold"
         app:layout_constraintVertical_chainStyle="packed"
@@ -40,22 +41,36 @@
         android:layout_marginTop="10dp"
         android:maxLines="1"
         android:textSize="30sp"
-
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTag" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewTag"
+        android:labelFor="@+id/tvName"
+        />
 
     <Button
         android:id="@+id/btnEnter"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="Enter"
+        android:text="@string/strEnter"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        app:layout_constraintVertical_bias="0.70"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

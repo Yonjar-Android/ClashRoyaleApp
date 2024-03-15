@@ -5,6 +5,6 @@ sealed class StartFragmentState {
 
     data class Error(val error: String) : StartFragmentState()
 
-    data class Success(val phrase:String): StartFragmentState()
+    data class Success(val playerTag:String): StartFragmentState()
 
 }
