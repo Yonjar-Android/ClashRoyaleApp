@@ -7,6 +7,20 @@
     <string name="strEnter">Enter</string>
     <string name="logoDesc">Clash Royale Logo</string>
 
+    <string name="favCard">Favourite Card</string>
+
+    <string name="strUsername">Username: %s</string>
+    <string name="strLevel">Level: %d</string>
+    <string name="strTag">Tag Player: %s</string>
+
+    <string name="strCurrentDeck">Current Deck</string>
+
+    <string name="strCurrentTrophies">Current trophies: %d</string>
+    <string name="strBest">Best trophies: %d</string>
+
+    <string name="strWins">Wins: %d</string>
+    <string name="strLosses">Losses: %d</string>
+
     //Errores
 
     <string name="notFound">Player was not found</string>

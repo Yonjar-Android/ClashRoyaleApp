@@ -7,8 +7,9 @@ data class PlayerMainInfoModel(
     val tagPlayer: String,
     val userName: String,
     val level: Int,
+    val wins:Int,
     val losses: Int,
-    val trophies: Int,
+    val currentTrophies: Int,
     val bestTrophies: Int,
     val favouriteCard: String,
     val currentDeck: List<Card>

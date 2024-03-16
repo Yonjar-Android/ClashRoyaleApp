@@ -1,40 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView android:layout_width="match_parent"
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 <androidx.constraintlayout.widget.ConstraintLayout
 
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".ui.mainInfoFragment.MainInfoFragment">
 
-
-    <ImageView
-        android:id="@+id/ivFavCard"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        app:layout_constraintTop_toTopOf="parent"
+    <LinearLayout
+        android:id="@+id/mainContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/tvName"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/viewSeparator"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:id="@+id/ivFavCard"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_margin="8dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/favCard"
+            android:scaleType="fitCenter"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/tvStyleUser"
+                tools:text="Username: Yonjar132" />
+
+            <TextView
+                android:id="@+id/tvLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/tvStyleUser"
+                tools:text="Level: 41" />
+
+            <TextView
+                android:id="@+id/tvTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/tvStyleUser"
+                tools:text="Player tag: #8YCLLVCG" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/viewSeparator"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#000"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutSeasons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainContainer">
+
+    </View>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutSeasons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewSeparator"
+        app:layout_constraintBottom_toTopOf="@+id/tvTotalWins"
         android:layout_marginTop="10dp"
-        android:scaleType="fitCenter"
-        android:contentDescription="Favourite Card"
-        />
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/tvCurrentSeason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text = "Current trophies: 4589"
+            style="@style/tvStyleUser"
+            />
+
+        <TextView
+            android:id="@+id/tvBestSeason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text = "Best trophies: 6021"
+            style="@style/tvStyleUser"
+            />
+
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/tvName"
+        android:id="@+id/tvTotalWins"
+        style="@style/tvStyleUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/tvTotalLosses"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutSeasons"
+        tools:text="Wins: 3120" />
+
+    <TextView
+        android:id="@+id/tvTotalLosses"
+        style="@style/tvStyleUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivFavCard"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"
+        tools:text="Losses: 1908"
+        app:layout_constraintTop_toBottomOf="@+id/tvTotalWins"
+        app:layout_constraintBottom_toTopOf="@+id/viewSeparator2"
+        />
+
+    <View
+        android:id="@+id/viewSeparator2"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#000"
+        app:layout_constraintBottom_toTopOf="@+id/tvCurrentDeck"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTotalLosses"
+        android:layout_marginVertical="20dp"
+        >
+
+    </View>
+
+    <TextView
+        android:id="@+id/tvCurrentDeck"
+        style="@style/tvStyleUser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewSeparator2"
+        app:layout_constraintBottom_toTopOf="@+id/rvCards"
+
+        android:textAlignment="center"
+        android:text="@string/strCurrentDeck" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCards"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCurrentDeck"
+        android:layout_marginTop="20dp"
+        />
+
+    <View
+        android:id="@+id/whiteScreen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#fff"
+        android:visibility="gone"
         />
 
     <ProgressBar
@@ -44,7 +190,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

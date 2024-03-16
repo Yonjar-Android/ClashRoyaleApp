@@ -17,7 +17,9 @@ data class PlayerResponse(
     @SerializedName("currentDeck") val currentDeck:List<Card>
 ) {
     fun toPlayerModel() = PlayerMainInfoModel(
-        tagPlayer, userName, level, losses, trophies, bestTrophies, favouriteCard.cardImage.medium, currentDeck
+        tagPlayer = tagPlayer, userName = userName, level = level, wins = wins, losses = losses,
+        currentTrophies = trophies, bestTrophies = bestTrophies, favouriteCard = favouriteCard.cardImage.medium,
+        currentDeck = currentDeck
     )
 }
 

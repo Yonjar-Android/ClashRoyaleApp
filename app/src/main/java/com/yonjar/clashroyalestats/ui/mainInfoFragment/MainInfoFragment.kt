@@ -13,10 +13,12 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.yonjar.clashroyalestats.R
 import com.yonjar.clashroyalestats.databinding.FragmentMainInfoBinding
+import com.yonjar.clashroyalestats.ui.mainInfoFragment.recyclerView.RvMainInfoAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -34,6 +36,8 @@ class MainInfoFragment : Fragment() {
     private val viewModel:MainInfoViewModel by viewModels()
 
     private lateinit var onBackPressedCallback: OnBackPressedCallback
+
+    private lateinit var rvAdapter:RvMainInfoAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -61,6 +65,14 @@ class MainInfoFragment : Fragment() {
     }
 
     private fun initUI(){
+        rvAdapter = RvMainInfoAdapter(requireContext(), listOf())
+        val griLayout = GridLayoutManager(requireContext(), 2)
+
+        binding.rvCards.apply {
+            adapter = rvAdapter
+            layoutManager = griLayout
+        }
+
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED){
                 viewModel.state.collectLatest { state ->
@@ -78,12 +90,25 @@ class MainInfoFragment : Fragment() {
 
         Glide.with(requireContext()).load(state.playerInfo.favouriteCard).into(binding.ivFavCard)
 
-        binding.tvName.text = state.playerInfo.userName
+        binding.tvName.text = getString(R.string.strUsername,state.playerInfo.userName)
+        binding.tvLevel.text = getString(R.string.strLevel,state.playerInfo.level)
+        binding.tvTag.text = getString(R.string.strTag,state.playerInfo.tagPlayer)
+
+        binding.tvBestSeason.text = getString(R.string.strBest,state.playerInfo.bestTrophies)
+        binding.tvCurrentSeason.text = getString(R.string.strCurrentTrophies,state.playerInfo.currentTrophies)
+
+        binding.tvTotalWins.text = getString(R.string.strWins,state.playerInfo.wins)
+        binding.tvTotalLosses.text = getString(R.string.strLosses,state.playerInfo.losses)
+
+        rvAdapter.updateList(state.playerInfo.currentDeck)
+
 
         binding.progressBar.visibility = View.GONE
+        binding.whiteScreen.visibility = View.GONE
     }
 
     private fun funLoading() {
+        binding.whiteScreen.visibility = View.VISIBLE
         binding.progressBar.visibility = View.VISIBLE
     }
 
@@ -92,6 +117,7 @@ class MainInfoFragment : Fragment() {
         Toast.makeText(requireContext(), state.error, Toast.LENGTH_SHORT).show()
 
         binding.progressBar.visibility = View.GONE
+        binding.whiteScreen.visibility = View.GONE
     }
 
     private fun setupOnBackPressed() {

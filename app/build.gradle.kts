@@ -56,15 +56,15 @@ dependencies {
     //Unit Testing
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
-    testImplementation ("io.mockk:mockk:1.12.0")
-    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0")
+    testImplementation("io.mockk:mockk:1.12.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0")
 
     // Retrofit
 
     val retrofitVersion = "2.9.0"
 
-    implementation ("com.squareup.retrofit2:retrofit:$retrofitVersion")
-    implementation ("com.squareup.retrofit2:converter-gson:$retrofitVersion")
+    implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
+    implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
 
     // Interceptor
 
@@ -98,7 +98,8 @@ dependencies {
 
     // Glide
 
-    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
 
     // Splash Screen
 
