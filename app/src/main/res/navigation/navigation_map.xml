@@ -40,6 +40,9 @@
         <action
             android:id="@+id/action_cardsFragment2_to_badgesFragment2"
             app:destination="@id/badgesFragment2" />
+        <argument
+            android:name="tagPlayer"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/badgesFragment2"
@@ -55,6 +58,9 @@
         <action
             android:id="@+id/action_badgesFragment2_to_cardsFragment2"
             app:destination="@id/cardsFragment2" />
+        <argument
+            android:name="tagPlayer"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/chestFragment2"
@@ -70,6 +76,9 @@
         <action
             android:id="@+id/action_chestFragment2_to_badgesFragment2"
             app:destination="@id/badgesFragment2" />
+        <argument
+            android:name="tagPlayer"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/startFragment2"

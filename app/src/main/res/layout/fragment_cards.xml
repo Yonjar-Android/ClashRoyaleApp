@@ -3,12 +3,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.cardsFragment.CardsFragment">
+    tools:context=".ui.cardsFragment.CardsFragment"
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCards"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <View
+        android:id="@+id/whiteScreen"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Cards" />
+        android:background="#fff"
+        android:visibility="gone"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        />
 
 </FrameLayout>

@@ -19,7 +19,7 @@ data class PlayerResponse(
     fun toPlayerModel() = PlayerMainInfoModel(
         tagPlayer = tagPlayer, userName = userName, level = level, wins = wins, losses = losses,
         currentTrophies = trophies, bestTrophies = bestTrophies, favouriteCard = favouriteCard.cardImage.medium,
-        currentDeck = currentDeck
+        currentDeck = currentDeck, cards
     )
 }
 

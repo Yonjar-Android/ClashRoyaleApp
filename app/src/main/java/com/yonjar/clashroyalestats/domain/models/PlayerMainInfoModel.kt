@@ -12,5 +12,6 @@ data class PlayerMainInfoModel(
     val currentTrophies: Int,
     val bestTrophies: Int,
     val favouriteCard: String,
-    val currentDeck: List<Card>
+    val currentDeck: List<Card>,
+    val cards:List<Card>
 )

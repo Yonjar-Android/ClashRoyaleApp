@@ -59,9 +59,33 @@ class MainInfoFragment : Fragment() {
         if (args.tagPlayer.isNotBlank()){ viewModel.chargePlayerInfo(args.tagPlayer)} else Toast.makeText(requireContext(),"An error has ocurred",Toast.LENGTH_SHORT).show()
 
         initUI()
+        initListeners()
 
         setupOnBackPressed()
 
+    }
+
+    private fun initListeners() {
+        bottomNavigation.setOnItemSelectedListener {menuItem ->
+            when(menuItem.itemId){
+                R.id.cardsMenu -> {
+                    findNavController().navigate(MainInfoFragmentDirections.actionMainInfoFragment2ToCardsFragment2(args.tagPlayer))
+                    true
+                }
+
+                R.id.badgesMenu -> {
+                    findNavController().navigate(MainInfoFragmentDirections.actionMainInfoFragment2ToBadgesFragment2(args.tagPlayer))
+                    true
+                }
+
+                R.id.chestMenu -> {
+                    findNavController().navigate(MainInfoFragmentDirections.actionMainInfoFragment2ToChestFragment2(args.tagPlayer))
+                    true
+                }
+
+                else -> { false   }
+            }
+        }
     }
 
     private fun initUI(){
