@@ -1,6 +1,7 @@
 package com.yonjar.clashroyalestats.domain.models
 
 
+import com.yonjar.clashroyalestats.data.modelResponses.Badges
 import com.yonjar.clashroyalestats.data.modelResponses.Card
 
 data class PlayerMainInfoModel(
@@ -13,5 +14,6 @@ data class PlayerMainInfoModel(
     val bestTrophies: Int,
     val favouriteCard: String,
     val currentDeck: List<Card>,
-    val cards:List<Card>
+    val cards:List<Card>,
+    val badges:List<Badges>
 )

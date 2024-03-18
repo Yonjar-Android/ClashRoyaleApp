@@ -19,7 +19,7 @@ data class PlayerResponse(
     fun toPlayerModel() = PlayerMainInfoModel(
         tagPlayer = tagPlayer, userName = userName, level = level, wins = wins, losses = losses,
         currentTrophies = trophies, bestTrophies = bestTrophies, favouriteCard = favouriteCard.cardImage.medium,
-        currentDeck = currentDeck, cards
+        currentDeck = currentDeck, cards, badges
     )
 }
 
@@ -38,6 +38,7 @@ data class IconUrlsCard(
 data class Badges(
     @SerializedName("name") val name:String,
     @SerializedName("level") val level: Int,
+    @SerializedName("iconUrls") val image:IconUrlsBadge
 )
 
 data class IconUrlsBadge(

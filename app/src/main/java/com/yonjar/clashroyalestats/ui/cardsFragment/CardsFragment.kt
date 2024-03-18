@@ -114,8 +114,8 @@ class CardsFragment : Fragment() {
     }
 
     private fun funLoading() {
-        //binding.progressBar.visibility = View.VISIBLE
-        //binding.whiteScreen.visibility = View.VISIBLE
+        binding.progressBar.visibility = View.VISIBLE
+        binding.whiteScreen.visibility = View.VISIBLE
     }
 
     private fun funSuccess(state: CardsState.Success) {
