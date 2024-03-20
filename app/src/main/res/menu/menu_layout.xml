@@ -3,22 +3,26 @@
 
     <item
         android:id="@+id/mainStatsMenu"
-        android:title="User"
+        android:title="@string/strUserMenu"
+        android:icon="@drawable/trophy_icon"
         />
 
     <item
         android:id="@+id/cardsMenu"
-        android:title="Cards"
+        android:title="@string/strCardMenu"
+        android:icon="@drawable/card_icon"
         />
 
     <item
         android:id="@+id/badgesMenu"
-        android:title="Badges"
+        android:title="@string/strBadgeMenu"
+        android:icon="@drawable/badges_icon"
         />
 
     <item
         android:id="@+id/chestMenu"
-        android:title="Chest Cycle"
+        android:title="@string/strChestMenu"
+        android:icon="@drawable/legendary_chest"
         />
 
 

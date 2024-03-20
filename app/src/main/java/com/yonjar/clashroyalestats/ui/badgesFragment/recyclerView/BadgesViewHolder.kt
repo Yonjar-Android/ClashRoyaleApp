@@ -12,10 +12,13 @@ class BadgesViewHolder(itemView: View):ViewHolder(itemView) {
 
     val binding = CardItemviewBinding.bind(itemView)
 
-    fun render(context: Context, badge: BadgeModel){
+    fun render(context: Context, badge: BadgeModel, toDetail: (String, String, Int) -> Unit){
 
         Glide.with(context).load(badge.image).into(binding.ivCard)
 
+        itemView.setOnClickListener {
+            toDetail(badge.name, badge.image, badge.level)
+        }
     }
 
 }

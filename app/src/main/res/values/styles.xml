@@ -6,4 +6,11 @@
         <item name="android:textStyle">bold</item>
 
     </style>
+
+    <style name="tvStyleDetail">
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">35dp</item>
+    </style>
 </resources>

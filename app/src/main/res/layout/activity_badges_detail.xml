@@ -6,12 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".ui.badgesDetailActivity.BadgesDetailActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="badgesDetail"
+    <ImageView
+        android:id="@+id/ivBadge"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvName"
+        app:layout_constraintVertical_chainStyle="packed"
+        />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/strCardName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivBadge"
+        style="@style/tvStyleDetail"
+        app:layout_constraintBottom_toTopOf="@+id/tvLevel"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/tvLevel"
+        style="@style/tvStyleDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
+        tools:text="@string/strLevel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

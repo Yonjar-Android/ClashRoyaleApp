@@ -2,6 +2,7 @@ package com.yonjar.clashroyalestats.ui.mainActivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.yonjar.clashroyalestats.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -14,5 +15,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.navMenu.visibility = View.GONE
+
     }
 }

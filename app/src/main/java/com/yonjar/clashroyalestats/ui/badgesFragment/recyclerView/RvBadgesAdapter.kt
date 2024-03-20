@@ -9,14 +9,15 @@ import com.yonjar.clashroyalestats.R
 import com.yonjar.clashroyalestats.data.modelResponses.Badges
 import com.yonjar.clashroyalestats.domain.models.BadgeModel
 
-class RvBadgesAdapter(private val context: Context, private var badgesList: List<BadgeModel>):RecyclerView.Adapter<BadgesViewHolder>() {
+class RvBadgesAdapter(private val context: Context, private var badgesList: List<BadgeModel>, private val toDetail: (String, String, Int) -> Unit)
+    :RecyclerView.Adapter<BadgesViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BadgesViewHolder =
         BadgesViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.card_itemview, parent, false))
 
     override fun getItemCount(): Int = badgesList.size
 
     override fun onBindViewHolder(holder: BadgesViewHolder, position: Int) {
-        holder.render(context,badgesList[position])
+        holder.render(context,badgesList[position], toDetail)
     }
 
     fun updateList(newList:List<BadgeModel>){

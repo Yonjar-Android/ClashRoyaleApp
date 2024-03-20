@@ -43,6 +43,9 @@
         <argument
             android:name="tagPlayer"
             app:argType="string" />
+        <action
+            android:id="@+id/action_cardsFragment2_to_cardDetailActivity"
+            app:destination="@id/cardDetailActivity" />
     </fragment>
     <fragment
         android:id="@+id/badgesFragment2"
@@ -61,6 +64,9 @@
         <argument
             android:name="tagPlayer"
             app:argType="string" />
+        <action
+            android:id="@+id/action_badgesFragment2_to_badgesDetailActivity"
+            app:destination="@id/badgesDetailActivity" />
     </fragment>
     <fragment
         android:id="@+id/chestFragment2"
@@ -89,4 +95,40 @@
             android:id="@+id/action_startFragment2_to_mainInfoFragment22"
             app:destination="@id/mainInfoFragment2" />
     </fragment>
+    <activity
+        android:id="@+id/cardDetailActivity"
+        android:name="com.yonjar.clashroyalestats.ui.cardsDetailActivity.CardDetailActivity"
+        android:label="activity_card_detail"
+        tools:layout="@layout/activity_card_detail" >
+        <argument
+            android:name="cardName"
+            app:argType="string" />
+        <argument
+            android:name="cardLevel"
+            app:argType="integer" />
+        <argument
+            android:name="elixirCost"
+            app:argType="integer" />
+        <argument
+            android:name="cardRarity"
+            app:argType="string" />
+        <argument
+            android:name="cardImage"
+            app:argType="string" />
+    </activity>
+    <activity
+        android:id="@+id/badgesDetailActivity"
+        android:name="com.yonjar.clashroyalestats.ui.badgesDetailActivity.BadgesDetailActivity"
+        android:label="activity_badges_detail"
+        tools:layout="@layout/activity_badges_detail" >
+        <argument
+            android:name="badgeName"
+            app:argType="string" />
+        <argument
+            android:name="badgeImage"
+            app:argType="string" />
+        <argument
+            android:name="badgeLevel"
+            app:argType="integer" />
+    </activity>
 </navigation>

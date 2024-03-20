@@ -52,6 +52,7 @@ class BadgesFragment : Fragment() {
         viewModel.chargeBadges(args.tagPlayer)
 
         bottomNavigation = requireActivity().findViewById(R.id.navMenu)
+        bottomNavigation.visibility = View.VISIBLE
 
         initUi()
         initListeners()
@@ -81,7 +82,7 @@ class BadgesFragment : Fragment() {
     }
 
     private fun initUi() {
-        rvAdapter = RvBadgesAdapter(requireContext(), listOf())
+        rvAdapter = RvBadgesAdapter(requireContext(), listOf()) { name, image, level -> toBadgeDetail(name, image, level)}
 
         binding.rvBadges.apply {
             adapter = rvAdapter
@@ -123,5 +124,8 @@ class BadgesFragment : Fragment() {
         binding.whiteScreen.visibility = View.GONE
     }
 
+    private fun toBadgeDetail(name:String, image:String, level:Int){
+        findNavController().navigate(BadgesFragmentDirections.actionBadgesFragment2ToBadgesDetailActivity(name, image, level))
+    }
 
 }

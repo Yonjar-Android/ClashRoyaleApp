@@ -12,10 +12,14 @@ class CardsFragmentViewHolder(itemView: View) :ViewHolder(itemView) {
 
     private val binding = CarddetailItemviewBinding.bind(itemView)
 
-    fun render(context: Context, card: CardModel){
+    fun render(context: Context, card: CardModel, toDetail: (String,String,String,Int,Int) -> Unit){
         Glide.with(context).load(card.cardImage).into(binding.ivCard)
 
         binding.tvCardName.text = card.name
+
+        itemView.setOnClickListener {
+            toDetail(card.name, card.rarity, card.cardImage, card.level, card.elixirCost)
+        }
     }
 
 }

@@ -46,21 +46,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/tvStyleUser"
-                tools:text="Username: Yonjar132" />
+                tools:text="@string/strUsername" />
 
             <TextView
                 android:id="@+id/tvLevel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/tvStyleUser"
-                tools:text="Level: 41" />
+                tools:text="@string/strLevel" />
 
             <TextView
                 android:id="@+id/tvTag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/tvStyleUser"
-                tools:text="Player tag: #8YCLLVCG" />
+                tools:text="@string/strTag" />
 
         </LinearLayout>
     </LinearLayout>
@@ -95,7 +95,7 @@
             android:id="@+id/tvCurrentSeason"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text = "Current trophies: 4589"
+            tools:text = "@string/strCurrentTrophies"
             style="@style/tvStyleUser"
             />
 
@@ -103,7 +103,7 @@
             android:id="@+id/tvBestSeason"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text = "Best trophies: 6021"
+            tools:text = "@string/strBest"
             style="@style/tvStyleUser"
             />
 
@@ -118,7 +118,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/linearLayoutSeasons"
-        tools:text="Wins: 3120" />
+        tools:text="@string/strWins" />
 
     <TextView
         android:id="@+id/tvTotalLosses"
@@ -127,7 +127,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="Losses: 1908"
+        tools:text="@string/strLosses"
         app:layout_constraintTop_toBottomOf="@+id/tvTotalWins"
         app:layout_constraintBottom_toTopOf="@+id/viewSeparator2"
         />

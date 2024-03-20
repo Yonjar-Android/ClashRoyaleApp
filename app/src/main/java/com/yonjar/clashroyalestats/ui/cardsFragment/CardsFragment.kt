@@ -84,7 +84,7 @@ class CardsFragment : Fragment() {
     }
 
     private fun initUI() {
-        rvAdapter = RvCardsAdapter(requireContext(), listOf())
+        rvAdapter = RvCardsAdapter(requireContext(), listOf()) {name, rarity, image, level, elixir -> navigateToDetail(name, rarity, image, level, elixir)}
 
         binding.rvCards.apply {
             adapter = rvAdapter
@@ -124,6 +124,10 @@ class CardsFragment : Fragment() {
 
         binding.progressBar.visibility = View.GONE
         binding.whiteScreen.visibility = View.GONE
+    }
+
+    private fun navigateToDetail(name:String, rarity:String, image:String, level:Int , elixir:Int){
+        findNavController().navigate(CardsFragmentDirections.actionCardsFragment2ToCardDetailActivity(name,level,elixir,rarity,image))
     }
 
 

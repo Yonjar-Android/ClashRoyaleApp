@@ -21,6 +21,24 @@
     <string name="strWins">Wins: %d</string>
     <string name="strLosses">Losses: %d</string>
 
+    <string name="strAllCards">All Cards</string>
+    <string name="strAllBadges">All Badges</string>
+
+    // Menu
+
+    <string name="strUserMenu">User</string>
+    <string name="strChestMenu">Chest</string>
+    <string name="strCardMenu">Cards</string>
+    <string name="strBadgeMenu">Badges</string>
+
+
+    // Card Detail
+
+    <string name="strCardName">Name: \n %s</string>
+    <string name="strCardRarity">Rarity: %s</string>
+    <string name="strCardLevel">Level: %d</string>
+    <string name="strCardElixir">Elixir cost: %d</string>
+
     //Errores
 
     <string name="notFound">Player was not found</string>
