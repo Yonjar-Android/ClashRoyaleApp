@@ -6,14 +6,15 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.yonjar.clashroyalestats.data.modelResponses.Badges
 import com.yonjar.clashroyalestats.databinding.CardItemviewBinding
+import com.yonjar.clashroyalestats.domain.models.BadgeModel
 
 class BadgesViewHolder(itemView: View):ViewHolder(itemView) {
 
     val binding = CardItemviewBinding.bind(itemView)
 
-    fun render(context: Context, badge:Badges){
+    fun render(context: Context, badge: BadgeModel){
 
-        Glide.with(context).load(badge.image.badgeImage).into(binding.ivCard)
+        Glide.with(context).load(badge.image).into(binding.ivCard)
 
     }
 

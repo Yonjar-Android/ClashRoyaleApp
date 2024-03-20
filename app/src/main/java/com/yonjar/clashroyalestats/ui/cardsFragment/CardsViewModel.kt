@@ -17,10 +17,10 @@ class CardsViewModel @Inject constructor(private val repositoryImp: RepositoryIm
     fun chargeCards(tagPlayer:String){
         try {
             viewModelScope.launch {
-                val response = repositoryImp.getPlayerInfo(tagPlayer)
+                val response = repositoryImp.getPlayerCards(tagPlayer)
 
                 if(response != null){
-                    _state.value = CardsState.Success(response.cards)
+                    _state.value = CardsState.Success(response)
                 } else{
                     _state.value = CardsState.Error("Response was null")
                 }

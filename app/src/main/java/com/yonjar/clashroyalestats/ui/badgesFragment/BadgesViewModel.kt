@@ -18,10 +18,11 @@ class BadgesViewModel @Inject constructor(private val repositoryImp: RepositoryI
     fun chargeBadges(tagPlayer:String){
         try {
             viewModelScope.launch {
-                val response = repositoryImp.getPlayerInfo(tagPlayer)
+                val response = repositoryImp.getPlayerBadges(tagPlayer)
 
                 if(response != null){
-                    _state.value = BadgesState.Success(response.badges)
+
+                    _state.value = BadgesState.Success(response)
                 } else{
                     _state.value = BadgesState.Error("Response was null")
                 }
