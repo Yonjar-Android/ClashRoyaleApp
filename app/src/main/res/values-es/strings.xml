@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ClashRoyaleStats</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="strEnterTag">Introduce el id del jugador</string>
+    <string name="strEnter">Buscar</string>
+    <string name="logoDesc">Logo de clash royale</string>
+
+    <string name="favCard">Carta favorita</string>
+
+    <string name="strUsername">Nombre de usuario: \n %s</string>
+    <string name="strLevel">Nivel: %d</string>
+    <string name="strTag">Id de jugador: \n %s</string>
+
+    <string name="strCurrentDeck">Mazo actual</string>
+
+    <string name="strCurrentTrophies">Trofeos actuales: %d</string>
+    <string name="strBest">Mejores trofeos: %d</string>
+
+    <string name="strWins">Victorias: %d</string>
+    <string name="strLosses">Derrotas: %d</string>
+
+    <string name="strAllCards">Todas las cartas</string>
+    <string name="strAllBadges">Todas las insignias</string>
+
+    // Menu
+
+    <string name="strUserMenu">Usuario</string>
+    <string name="strChestMenu">Cofres</string>
+    <string name="strCardMenu">Cartas</string>
+    <string name="strBadgeMenu">Insignias</string>
+
+
+    // Card Detail
+
+    <string name="strCardName">Nombre: \n %s</string>
+    <string name="strCardRarity">Rareza: %s</string>
+    <string name="strCardLevel">Nivel: %d</string>
+    <string name="strCardElixir">Coste de elixir: %d</string>
+
+    //Errores
+
+    <string name="notFound">Jugador no encontrado</string>
+    <string name="unknownError">Error desconocido</string>
+</resources>

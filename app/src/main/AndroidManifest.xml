@@ -22,11 +22,10 @@
             android:name=".ui.badgesDetailActivity.BadgesDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.userActitivy.UserActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.mainActivity.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/App.Theme.Starting"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
