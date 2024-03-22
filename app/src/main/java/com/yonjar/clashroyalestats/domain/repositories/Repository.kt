@@ -2,6 +2,7 @@ package com.yonjar.clashroyalestats.domain.repositories
 
 import com.yonjar.clashroyalestats.domain.models.BadgeModel
 import com.yonjar.clashroyalestats.domain.models.CardModel
+import com.yonjar.clashroyalestats.domain.models.ChestModel
 import com.yonjar.clashroyalestats.domain.models.PlayerMainInfoModel
 
 interface Repository {
@@ -11,5 +12,7 @@ interface Repository {
     suspend fun getPlayerCards(tagPlayer:String):List<CardModel>?
 
     suspend fun getPlayerBadges(tagPlayer:String):List<BadgeModel>?
+
+    suspend fun getChestCycle(tagPlayer: String): List<ChestModel>?
 
 }

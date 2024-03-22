@@ -4,6 +4,7 @@ import android.util.Log
 import com.yonjar.clashroyalestats.data.network.UserService
 import com.yonjar.clashroyalestats.domain.models.BadgeModel
 import com.yonjar.clashroyalestats.domain.models.CardModel
+import com.yonjar.clashroyalestats.domain.models.ChestModel
 import com.yonjar.clashroyalestats.domain.models.PlayerMainInfoModel
 import com.yonjar.clashroyalestats.domain.repositories.Repository
 import javax.inject.Inject
@@ -32,6 +33,16 @@ class RepositoryImp @Inject constructor(private val service: UserService):Reposi
             service.getPlayers(tagPlayer)
         }. onFailure { it.message?.let { errorMsg -> Log.i("Error", errorMsg) } }
             .onSuccess { it -> return it.toPlayerModel().badges.map { it.toBadgeModel() } }
+
+        return null
+    }
+
+    override suspend fun getChestCycle(tagPlayer: String): List<ChestModel>? {
+        runCatching {
+            println(service.getChestCycle(tagPlayer))
+            service.getChestCycle(tagPlayer)
+        }. onFailure { it.message?.let { errorMsg -> Log.i("Error", errorMsg) } }
+            .onSuccess { it -> return it.chestList.map { it.toChestModel() } }
 
         return null
     }
