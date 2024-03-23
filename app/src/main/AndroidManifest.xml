@@ -14,17 +14,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ClashRoyaleStats"
-        tools:targetApi="31">
+        tools:targetApi="31"
+        tools:ignore="DiscouragedApi,LockedOrientationActivity"
+        >
         <activity
             android:name=".ui.cardsDetailActivity.CardDetailActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+             />
         <activity
             android:name=".ui.badgesDetailActivity.BadgesDetailActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".ui.mainActivity.MainActivity"
             android:exported="true"
             android:theme="@style/App.Theme.Starting"
+            android:screenOrientation="portrait"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

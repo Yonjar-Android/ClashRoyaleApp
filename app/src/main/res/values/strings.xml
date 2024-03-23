@@ -35,7 +35,7 @@
     // Card Detail
 
     <string name="strCardName">Name: \n %s</string>
-    <string name="strCardRarity">Rarity: %s</string>
+    <string name="strCardRarity">Rarity: \n %s</string>
     <string name="strCardLevel">Level: %d</string>
     <string name="strCardElixir">Elixir cost: %d</string>
 
