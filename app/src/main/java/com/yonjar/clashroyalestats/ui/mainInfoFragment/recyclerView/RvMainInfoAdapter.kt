@@ -7,8 +7,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.yonjar.clashroyalestats.R
 import com.yonjar.clashroyalestats.data.modelResponses.Card
+import com.yonjar.clashroyalestats.domain.models.CardModel
 
-class RvMainInfoAdapter(private val context: Context, private var cardList: List<Card>):RecyclerView.Adapter<MainInfoViewHolder>() {
+class RvMainInfoAdapter(private val context: Context, private var cardList: List<CardModel>):RecyclerView.Adapter<MainInfoViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainInfoViewHolder {
         return MainInfoViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.card_itemview,parent, false))
     }
@@ -19,7 +20,7 @@ class RvMainInfoAdapter(private val context: Context, private var cardList: List
        holder.render(context, cardList[position])
     }
 
-    fun updateList(newList:List<Card>){
+    fun updateList(newList:List<CardModel>){
         val cardsDiffUtil = MainInfoDiffUtil(cardList,newList)
         val result = DiffUtil.calculateDiff(cardsDiffUtil)
         cardList = newList

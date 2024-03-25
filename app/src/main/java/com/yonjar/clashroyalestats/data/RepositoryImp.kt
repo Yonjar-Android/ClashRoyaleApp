@@ -13,7 +13,7 @@ class RepositoryImp @Inject constructor(private val service: UserService):Reposi
     override suspend fun getPlayerInfo(tagPlayer: String): PlayerMainInfoModel? {
         runCatching {
             service.getPlayers(tagPlayer)
-        }. onFailure { it.message?.let { errorMsg -> Log.i("Error", errorMsg) } }
+        }. onFailure { println("${it.message}")  }
             .onSuccess { return it.toPlayerModel() }
 
         return null
@@ -22,8 +22,8 @@ class RepositoryImp @Inject constructor(private val service: UserService):Reposi
     override suspend fun getPlayerCards(tagPlayer: String): List<CardModel>? {
         runCatching {
             service.getPlayers(tagPlayer)
-        }. onFailure { it.message?.let { errorMsg -> Log.i("Error", errorMsg) } }
-            .onSuccess { it -> return it.toPlayerModel().cards.map { it.toCardModel() } }
+        }. onFailure { println("${it.message}")  }
+            .onSuccess {  return it.toPlayerModel().cards }
 
         return null
     }
@@ -31,17 +31,16 @@ class RepositoryImp @Inject constructor(private val service: UserService):Reposi
     override suspend fun getPlayerBadges(tagPlayer: String): List<BadgeModel>? {
         runCatching {
             service.getPlayers(tagPlayer)
-        }. onFailure { it.message?.let { errorMsg -> Log.i("Error", errorMsg) } }
-            .onSuccess { it -> return it.toPlayerModel().badges.map { it.toBadgeModel() } }
+        }. onFailure { println("${it.message}") }
+            .onSuccess { return it.toPlayerModel().badges}
 
         return null
     }
 
     override suspend fun getChestCycle(tagPlayer: String): List<ChestModel>? {
         runCatching {
-            println(service.getChestCycle(tagPlayer))
             service.getChestCycle(tagPlayer)
-        }. onFailure { it.message?.let { errorMsg -> Log.i("Error", errorMsg) } }
+        }. onFailure { println("${it.message}") }
             .onSuccess { it -> return it.chestList.map { it.toChestModel() } }
 
         return null

@@ -27,9 +27,9 @@ data class PlayerResponse(
         currentTrophies = trophies,
         bestTrophies = bestTrophies,
         favouriteCard = favouriteCard.cardImage.medium,
-        currentDeck = currentDeck,
-        cards,
-        badges
+        currentDeck = currentDeck.map { it.toCardModel() },
+        cards = cards.map { it.toCardModel() },
+        badges = badges.map { it.toBadgeModel() }
     )
 }
 
