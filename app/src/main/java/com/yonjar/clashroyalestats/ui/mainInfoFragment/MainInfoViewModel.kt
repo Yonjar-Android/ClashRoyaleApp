@@ -16,8 +16,8 @@ class MainInfoViewModel @Inject constructor(private val repositoryImp: Repositor
     var state: StateFlow<MainInfoState> = _state
 
     fun chargePlayerInfo(tag:String){
-        try {
             viewModelScope.launch {
+                try {
                 val response = repositoryImp.getPlayerInfo(tag)
                 if(response != null){
                     _state.value = MainInfoState.Success(response)
@@ -25,9 +25,10 @@ class MainInfoViewModel @Inject constructor(private val repositoryImp: Repositor
                     _state.value = MainInfoState.Error("Player was not found")
                 }
             }
+                catch (e:Exception){
+                    _state.value = MainInfoState.Error(e.message ?: "Unknown error")
+                }
         }
-        catch (e:Exception){
-            _state.value = MainInfoState.Error(e.message ?: "Unknown error")
-        }
+
     }
 }

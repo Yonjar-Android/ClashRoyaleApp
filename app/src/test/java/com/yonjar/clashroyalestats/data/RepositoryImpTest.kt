@@ -136,7 +136,7 @@ class RepositoryImpTest {
     fun `getChestCycle should return a list of chests with its index`() = runBlocking {
 
         // Given
-        coEvery { userService.getChestCycle("8YCLLVCG") } returns MotherObject.chestList
+        coEvery { userService.getChestCycle("8YCLLVCG") } returns MotherObject.chestListResponse
 
         // When
         val response = repositoryImp.getChestCycle("8YCLLVCG")
@@ -146,8 +146,8 @@ class RepositoryImpTest {
         assertNotNull(response)
 
         // Verifica que los cofres sean los mismos
-        assertEquals(response!![0].name, MotherObject.chestList.chestList[0].name)
-        assertEquals(response[0].index, MotherObject.chestList.chestList[0].index)
+        assertEquals(response!![0].name, MotherObject.chestListResponse.chestList[0].name)
+        assertEquals(response[0].index, MotherObject.chestListResponse.chestList[0].index)
 
     }
 

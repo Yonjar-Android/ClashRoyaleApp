@@ -10,25 +10,25 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class StartViewModel @Inject constructor(private val repositoryImp: RepositoryImp): ViewModel() {
+class StartViewModel @Inject constructor(private val repositoryImp: RepositoryImp) : ViewModel() {
 
     private val _state = MutableStateFlow<StartFragmentState>(StartFragmentState.Success(""))
     var state: StateFlow<StartFragmentState> = _state
 
-    fun verifyPlayer(playerTag:String){
-        try {
-            _state.value = StartFragmentState.Loading
-            viewModelScope.launch {
+    fun verifyPlayer(playerTag: String) {
+        _state.value = StartFragmentState.Loading
+        viewModelScope.launch {
+            try {
                 val response = repositoryImp.getPlayerInfo(playerTag)
 
-                if(response != null){
+                if (response != null) {
                     _state.value = StartFragmentState.Success(playerTag)
-                } else{
+                } else {
                     _state.value = StartFragmentState.Error("Player was not found")
                 }
+            } catch (e: Exception) {
+                _state.value = StartFragmentState.Error(e.message ?: "Unknown error")
             }
-        } catch (e:Exception){
-            _state.value = StartFragmentState.Error(e.message ?: "Unknown error")
         }
     }
 

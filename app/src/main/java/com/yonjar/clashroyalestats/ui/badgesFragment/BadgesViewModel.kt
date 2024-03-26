@@ -10,26 +10,27 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class BadgesViewModel @Inject constructor(private val repositoryImp: RepositoryImp): ViewModel() {
+class BadgesViewModel @Inject constructor(private val repositoryImp: RepositoryImp) : ViewModel() {
 
     private val _state = MutableStateFlow<BadgesState>(BadgesState.Loading)
     var state: StateFlow<BadgesState> = _state
 
-    fun chargeBadges(tagPlayer:String){
-        try {
-            viewModelScope.launch {
+    fun chargeBadges(tagPlayer: String) {
+
+        viewModelScope.launch {
+            try {
                 val response = repositoryImp.getPlayerBadges(tagPlayer)
 
-                if(response != null){
+                if (response != null) {
 
                     _state.value = BadgesState.Success(response)
-                } else{
+                } else {
                     _state.value = BadgesState.Error("Response was null")
                 }
 
+            } catch (e: Exception) {
+                _state.value = BadgesState.Error(e.message ?: "Unknown error")
             }
-        } catch (e:Exception){
-            _state.value = BadgesState.Error(e.message ?: "Unknown error")
         }
     }
 

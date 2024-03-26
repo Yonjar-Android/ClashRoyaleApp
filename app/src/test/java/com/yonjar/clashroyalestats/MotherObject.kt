@@ -7,6 +7,7 @@ import com.yonjar.clashroyalestats.data.modelResponses.ChestResponse
 import com.yonjar.clashroyalestats.data.modelResponses.IconUrlsBadge
 import com.yonjar.clashroyalestats.data.modelResponses.IconUrlsCard
 import com.yonjar.clashroyalestats.data.modelResponses.PlayerResponse
+import com.yonjar.clashroyalestats.domain.models.ChestModel
 import com.yonjar.clashroyalestats.domain.models.PlayerMainInfoModel
 
 object MotherObject {
@@ -17,13 +18,22 @@ object MotherObject {
         Card("knight", 14, "common", 3, IconUrlsCard("knight"))
     )
 
-     val chestList = ChestResponse(
-         listOf(
-             ChestModelResponse(1, "Gold Chest"),
-             ChestModelResponse(2, "gold crate",),
-             ChestModelResponse(3, "Magical Chest"),
-             ChestModelResponse(4, "Giant Chest"))
-     )
+    val chestListResponse = ChestResponse(
+        listOf(
+            ChestModelResponse(1, "Gold Chest"),
+            ChestModelResponse(2, "Gold crate"),
+            ChestModelResponse(3, "Magical Chest"),
+            ChestModelResponse(4, "Giant Chest")
+        )
+    )
+
+    val chestListModel = listOf(
+        ChestModel( "Gold Chest", 1),
+        ChestModel("Gold crate", 2),
+        ChestModel("Magical Chest", 3),
+        ChestModel("Giant Chest", 4)
+    )
+
 
     private val badgesList = listOf(
         Badges("YearsPlayed", 7, IconUrlsBadge("yearsPlayerImg")),
@@ -34,7 +44,7 @@ object MotherObject {
     private val cardListModel = cardsList.map { it.toCardModel() }
 
     val userResponse = PlayerResponse(
-        "8YCLLVCG",
+        "#8YCLLVCG",
         "Yonjar",
         40,
         2000,
@@ -45,12 +55,11 @@ object MotherObject {
         cardsList,
         Card(
             "Hog rider", 11, "special", 4, IconUrlsCard("HogRider")
-        )
-        , listOf()
+        ), listOf()
     )
 
     val userModel = PlayerMainInfoModel(
-        "8YCLLVCG",
+        "#8YCLLVCG",
         "Yonjar",
         40,
         2000,

@@ -10,24 +10,25 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class CardsViewModel @Inject constructor(private val repositoryImp: RepositoryImp): ViewModel() {
+class CardsViewModel @Inject constructor(private val repositoryImp: RepositoryImp) : ViewModel() {
     private val _state = MutableStateFlow<CardsState>(CardsState.Loading)
     var state: StateFlow<CardsState> = _state
 
-    fun chargeCards(tagPlayer:String){
-        try {
-            viewModelScope.launch {
+    fun chargeCards(tagPlayer: String) {
+        viewModelScope.launch {
+            try {
                 val response = repositoryImp.getPlayerCards(tagPlayer)
 
-                if(response != null){
+                if (response != null) {
                     _state.value = CardsState.Success(response)
-                } else{
+                } else {
                     _state.value = CardsState.Error("Response was null")
                 }
 
             }
-        } catch (e:Exception){
-            _state.value = CardsState.Error(e.message ?: "Unknown error")
+            catch (e:Exception){
+                _state.value = CardsState.Error(e.message ?: "Unknown error")
+            }
         }
     }
 
