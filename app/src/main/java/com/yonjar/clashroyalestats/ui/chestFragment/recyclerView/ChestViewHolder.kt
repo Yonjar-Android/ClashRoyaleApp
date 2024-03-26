@@ -14,9 +14,8 @@ class ChestViewHolder(itemView: View) : ViewHolder(itemView) {
     val binding = CarddetailItemviewBinding.bind(itemView)
     @SuppressLint("SetTextI18n")
     fun render(context: Context, chest: ChestModel) {
-        val image = DesignUtils.getChestImage(chest.name)
 
-        Glide.with(context).load(image).into(binding.ivCard)
+        Glide.with(context).load(DesignUtils.getChestImage(chest.name)).into(binding.ivCard)
 
         binding.tvCardName.text = "+${chest.index}"
     }
