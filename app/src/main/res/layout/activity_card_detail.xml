@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvName"
         style="@style/tvStyleDetail"
         app:layout_constraintBottom_toTopOf="@+id/tvElixir"
-
+        android:textAlignment="center"
         />
 
     <TextView
@@ -54,6 +54,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvRarity"
         style="@style/tvStyleDetail"
         app:layout_constraintBottom_toTopOf="@+id/tvLevel"
+        android:textColor="#a0f"
         />
 
     <TextView

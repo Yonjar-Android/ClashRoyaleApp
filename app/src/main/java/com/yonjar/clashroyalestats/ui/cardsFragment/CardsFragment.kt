@@ -17,7 +17,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.yonjar.clashroyalestats.R
 import com.yonjar.clashroyalestats.databinding.FragmentCardsBinding
 import com.yonjar.clashroyalestats.ui.cardsFragment.recyclerView.RvCardsAdapter
-import com.yonjar.clashroyalestats.ui.mainInfoFragment.MainInfoFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch

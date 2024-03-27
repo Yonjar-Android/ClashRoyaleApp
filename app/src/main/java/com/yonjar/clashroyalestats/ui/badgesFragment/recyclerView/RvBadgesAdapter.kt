@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.yonjar.clashroyalestats.R
-import com.yonjar.clashroyalestats.data.modelResponses.Badges
 import com.yonjar.clashroyalestats.domain.models.BadgeModel
 
 class RvBadgesAdapter(private val context: Context, private var badgesList: List<BadgeModel>, private val toDetail: (String, String, Int) -> Unit)

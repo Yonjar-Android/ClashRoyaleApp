@@ -6,9 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.yonjar.clashroyalestats.R
-import com.yonjar.clashroyalestats.data.modelResponses.Card
 import com.yonjar.clashroyalestats.domain.models.CardModel
-import com.yonjar.clashroyalestats.ui.mainInfoFragment.recyclerView.MainInfoDiffUtil
 
 class RvCardsAdapter(private val context: Context, private var cards:List<CardModel>, private val toDetail: (String,String,String,Int,Int) -> Unit )
     :RecyclerView.Adapter<CardsFragmentViewHolder>() {

@@ -1,8 +1,6 @@
 package com.yonjar.clashroyalestats.ui.badgesFragment
 
-import com.yonjar.clashroyalestats.data.modelResponses.Badges
 import com.yonjar.clashroyalestats.domain.models.BadgeModel
-import com.yonjar.clashroyalestats.domain.models.PlayerMainInfoModel
 
 sealed class BadgesState {
     data object Loading : BadgesState()

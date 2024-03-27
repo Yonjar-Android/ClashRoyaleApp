@@ -1,7 +1,6 @@
 package com.yonjar.clashroyalestats.ui.mainInfoFragment.recyclerView
 
 import androidx.recyclerview.widget.DiffUtil
-import com.yonjar.clashroyalestats.data.modelResponses.Card
 import com.yonjar.clashroyalestats.domain.models.CardModel
 
 class MainInfoDiffUtil(private val oldList:List<CardModel>,

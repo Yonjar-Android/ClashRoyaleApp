@@ -4,7 +4,6 @@ import android.content.Context
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
-import com.yonjar.clashroyalestats.data.modelResponses.Card
 import com.yonjar.clashroyalestats.databinding.CarddetailItemviewBinding
 import com.yonjar.clashroyalestats.domain.models.CardModel
 

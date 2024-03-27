@@ -1,8 +1,8 @@
 package com.yonjar.clashroyalestats.ui.badgesDetailActivity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.navArgs
 import com.bumptech.glide.Glide
 import com.yonjar.clashroyalestats.R
