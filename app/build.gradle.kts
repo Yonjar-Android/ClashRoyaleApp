@@ -17,7 +17,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.yonjar.clashroyalestats.CustomTestRunner"
     }
 
     buildTypes {
@@ -50,8 +50,7 @@ dependencies {
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
 
     //Unit Testing
 
@@ -59,6 +58,21 @@ dependencies {
     testRuntimeOnly ("org.junit.jupiter:junit-jupiter-engine:5.8.1")
     testImplementation("io.mockk:mockk:1.12.0")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0")
+
+    // UI Testing
+
+    val testEspresso = "3.5.1"
+    val testHilt = "2.50"
+
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:$testEspresso")
+    androidTestImplementation ("com.google.dagger:hilt-android-testing:$testHilt")
+    kaptAndroidTest ("com.google.dagger:hilt-android-compiler:$testHilt")
+    androidTestImplementation ("androidx.fragment:fragment-testing:1.6.2")
+    androidTestImplementation ("androidx.test.espresso:espresso-contrib:$testEspresso")
+    androidTestImplementation ("androidx.test.espresso:espresso-contrib:$testEspresso")
+
+
 
     // Retrofit
 

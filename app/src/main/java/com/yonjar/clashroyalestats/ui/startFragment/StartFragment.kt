@@ -11,8 +11,11 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.yonjar.clashroyalestats.R
 import com.yonjar.clashroyalestats.databinding.FragmentStartBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -20,6 +23,8 @@ import kotlinx.coroutines.launch
 class StartFragment : Fragment() {
 
     private var _binding: FragmentStartBinding? = null
+
+    private lateinit var bottomNavigation: BottomNavigationView
 
     private val binding get() = _binding!!
 
@@ -31,6 +36,9 @@ class StartFragment : Fragment() {
 
         _binding = FragmentStartBinding.inflate(inflater, container, false)
 
+        bottomNavigation = requireActivity().findViewById(R.id.navMenu)
+        bottomNavigation.visibility = View.GONE
+
         return binding.root
     }
 
@@ -38,7 +46,6 @@ class StartFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initUI()
-
         initListeners()
 
     }
@@ -77,7 +84,7 @@ class StartFragment : Fragment() {
         Toast.makeText(requireContext(), state.error , Toast.LENGTH_SHORT).show()
 
         binding.progressBar.visibility = View.GONE
-        binding.whiteScreen!!.visibility = View.GONE
+        binding.whiteScreen?.visibility = View.GONE
 
     }
 
@@ -87,21 +94,21 @@ class StartFragment : Fragment() {
 
         Toast.makeText(requireContext(), "Player was found" , Toast.LENGTH_SHORT).show()
 
-
+        binding.progressBar.visibility = View.GONE
+        binding.whiteScreen?.visibility = View.GONE
 
         findNavController().navigate(
             StartFragmentDirections.actionStartFragment2ToMainInfoFragment22(
                 state.playerTag
             )
         )
-        binding.progressBar.visibility = View.GONE
-        binding.whiteScreen!!.visibility = View.GONE
+
 
     }
 
     private fun funLoading() {
         binding.progressBar.visibility = View.VISIBLE
-        binding.whiteScreen!!.visibility = View.VISIBLE
+        binding.whiteScreen?.visibility = View.VISIBLE
     }
 
 }

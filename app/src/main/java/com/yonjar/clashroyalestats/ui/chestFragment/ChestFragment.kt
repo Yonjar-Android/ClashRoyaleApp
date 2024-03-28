@@ -61,17 +61,17 @@ class ChestFragment : Fragment() {
     private fun initListeners() {
         bottomNavigation.setOnItemSelectedListener {menuItem ->
             when(menuItem.itemId){
-                R.id.cardsMenu -> {
+                R.id.cardsFragment2 -> {
                     findNavController().navigate(ChestFragmentDirections.actionChestFragment2ToCardsFragment2(args.tagPlayer))
                     true
                 }
 
-                R.id.badgesMenu -> {
+                R.id.badgesFragment2 -> {
                     findNavController().navigate(ChestFragmentDirections.actionChestFragment2ToBadgesFragment2(args.tagPlayer))
                     true
                 }
 
-                R.id.mainStatsMenu -> {
+                R.id.mainInfoFragment2 -> {
                     findNavController().navigate(ChestFragmentDirections.actionChestFragment2ToMainInfoFragment2(args.tagPlayer))
                     true
                 }
