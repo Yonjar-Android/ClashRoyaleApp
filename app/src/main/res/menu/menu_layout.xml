@@ -2,25 +2,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/mainStatsMenu"
+        android:id="@+id/mainInfoFragment2"
         android:title="@string/strUserMenu"
         android:icon="@drawable/trophy_icon"
         />
 
     <item
-        android:id="@+id/cardsMenu"
+        android:id="@+id/cardsFragment2"
         android:title="@string/strCardMenu"
         android:icon="@drawable/card_icon"
         />
 
     <item
-        android:id="@+id/badgesMenu"
+        android:id="@+id/badgesFragment2"
         android:title="@string/strBadgeMenu"
         android:icon="@drawable/badges_icon"
         />
 
     <item
-        android:id="@+id/chestMenu"
+        android:id="@+id/chestFragment2"
         android:title="@string/strChestMenu"
         android:icon="@drawable/legendary_chest"
         />

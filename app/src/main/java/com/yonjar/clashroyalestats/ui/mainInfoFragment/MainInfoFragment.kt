@@ -1,5 +1,6 @@
 package com.yonjar.clashroyalestats.ui.mainInfoFragment
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -39,6 +40,12 @@ class MainInfoFragment : Fragment() {
 
     private lateinit var rvAdapter:RvMainInfoAdapter
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        bottomNavigation = requireActivity().findViewById(R.id.navMenu)
+        bottomNavigation.visibility = View.VISIBLE
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -46,8 +53,6 @@ class MainInfoFragment : Fragment() {
 
         _binding = FragmentMainInfoBinding.inflate(inflater, container, false)
 
-        bottomNavigation = requireActivity().findViewById(R.id.navMenu)
-        bottomNavigation.visibility = View.VISIBLE
 
         return binding.root
     }
@@ -55,12 +60,10 @@ class MainInfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        println(args.tagPlayer)
         if (args.tagPlayer.isNotBlank()){ viewModel.chargePlayerInfo(args.tagPlayer)} else Toast.makeText(requireContext(),"An error has ocurred",Toast.LENGTH_SHORT).show()
 
-        initUI()
         initListeners()
-
+        initUI()
         setupOnBackPressed()
 
     }
@@ -68,21 +71,20 @@ class MainInfoFragment : Fragment() {
     private fun initListeners() {
         bottomNavigation.setOnItemSelectedListener {menuItem ->
             when(menuItem.itemId){
-                R.id.cardsMenu -> {
+                R.id.cardsFragment2 -> {
                     findNavController().navigate(MainInfoFragmentDirections.actionMainInfoFragment2ToCardsFragment2(args.tagPlayer))
                     true
                 }
 
-                R.id.badgesMenu -> {
+                R.id.badgesFragment2 -> {
                     findNavController().navigate(MainInfoFragmentDirections.actionMainInfoFragment2ToBadgesFragment2(args.tagPlayer))
                     true
                 }
 
-                R.id.chestMenu -> {
+                R.id.chestFragment2 -> {
                     findNavController().navigate(MainInfoFragmentDirections.actionMainInfoFragment2ToChestFragment2(args.tagPlayer))
                     true
                 }
-
                 else -> { false   }
             }
         }
@@ -112,6 +114,7 @@ class MainInfoFragment : Fragment() {
 
     private fun funSuccess(state: MainInfoState.Success) {
 
+
         Glide.with(requireContext()).load(state.playerInfo.favouriteCard).into(binding.ivFavCard)
 
         binding.tvName.text = getString(R.string.strUsername,state.playerInfo.userName)
@@ -126,9 +129,9 @@ class MainInfoFragment : Fragment() {
 
         rvAdapter.updateList(state.playerInfo.currentDeck)
 
-
         binding.progressBar.visibility = View.GONE
         binding.whiteScreen.visibility = View.GONE
+
     }
 
     private fun funLoading() {

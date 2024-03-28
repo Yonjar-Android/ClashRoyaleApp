@@ -61,17 +61,17 @@ class BadgesFragment : Fragment() {
     private fun initListeners() {
         bottomNavigation.setOnItemSelectedListener {menuItem ->
             when(menuItem.itemId){
-                R.id.mainStatsMenu -> {
+                R.id.mainInfoFragment2 -> {
                     findNavController().navigate(BadgesFragmentDirections.actionBadgesFragment2ToMainInfoFragment2(args.tagPlayer))
                     true
                 }
 
-                R.id.cardsMenu -> {
+                R.id.cardsFragment2 -> {
                     findNavController().navigate(BadgesFragmentDirections.actionBadgesFragment2ToCardsFragment2(args.tagPlayer))
                     true
                 }
 
-                R.id.chestMenu -> {
+                R.id.chestFragment2 -> {
                     findNavController().navigate(BadgesFragmentDirections.actionBadgesFragment2ToChestFragment2(args.tagPlayer))
                     true
                 }

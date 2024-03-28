@@ -61,6 +61,18 @@
         app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
+    <View
+        android:id="@+id/whiteScreen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="#fff"
+        android:visibility="gone"
+/>
+
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
