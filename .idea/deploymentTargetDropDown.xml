@@ -2,22 +2,8 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="MainActivityTest">
-        <State />
-      </entry>
       <entry key="app">
         <State>
-          <runningDeviceTargetSelectedWithDropDown>
-            <Target>
-              <type value="RUNNING_DEVICE_TARGET" />
-              <deviceKey>
-                <Key>
-                  <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="C:\Users\Lenovo\.android\avd\Pixel_4_API_28.avd" />
-                </Key>
-              </deviceKey>
-            </Target>
-          </runningDeviceTargetSelectedWithDropDown>
           <targetSelectedWithDropDown>
             <Target>
               <type value="QUICK_BOOT_TARGET" />
@@ -31,18 +17,6 @@
           </targetSelectedWithDropDown>
           <timeTargetWasSelectedWithDropDown value="2024-03-28T16:17:52.023030900Z" />
         </State>
-      </entry>
-      <entry key="when_the_user_Is_In_navigatesTo_mainInfoFragment_then_navigateTo_cardsFragment()">
-        <State />
-      </entry>
-      <entry key="when_the_user_is_in_navigatesTo_mainInfoFragment_then_navigateTo_badges_and_goTo_firstBadgeDetail()">
-        <State />
-      </entry>
-      <entry key="when_the_user_is_in_navigatesTo_mainInfoFragment_then_navigateTo_cardsFragment()">
-        <State />
-      </entry>
-      <entry key="when_the_user_is_in_navigatesTo_mainInfoFragment_then_navigateTo_cardsFragment_and_goTo_firstCardDetail()">
-        <State />
       </entry>
     </value>
   </component>
